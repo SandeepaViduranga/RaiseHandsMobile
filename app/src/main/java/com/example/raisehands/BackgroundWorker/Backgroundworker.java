@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.raisehands.user_dashboard;
 import com.example.raisehands.user_login;
+import com.example.raisehands.user_registration;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -22,6 +23,7 @@ import java.util.HashMap;
 
 public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, String> {
 
+    private user_registration ParentR;
     private user_dashboard ParentD;
     private user_login ParentL;
     private String type = "";
@@ -35,6 +37,11 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
     public Backgroundworker(user_dashboard parent) {
         ParentD = parent;
         myDialog = new Dialog(ParentD);
+    }
+
+    public Backgroundworker(user_registration parent) {
+        ParentR = parent;
+        myDialog = new Dialog(ParentR);
     }
 
     @Override
@@ -105,6 +112,9 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
         }
         if (type.equals("load_Records")) {
             ParentD.displayName(result);
+        }
+        if (type.equals("addMember")) {
+            ParentR.displayName(result);
         }
 
     }
