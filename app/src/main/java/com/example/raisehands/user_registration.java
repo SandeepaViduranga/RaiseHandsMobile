@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 public class user_registration extends AppCompatActivity {
 
-    private EditText txtName, txtNIC, txtEmail, txtPhone, txtPassword, txtAge;
+    private EditText txt_firstName, txt_lastName, txtJob, txtCountry, txtAddress, txtPhone, txtEmail, txtPassword;
     private String Gender;
     private AlertDialog alertDialog;
     
@@ -29,25 +29,28 @@ public class user_registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
 
-        txtName = (EditText) findViewById(R.id.txtname);
-        txtEmail = (EditText) findViewById(R.id.txtemail);
-        txtNIC = (EditText) findViewById(R.id.txtNIC);
-        txtPhone = (EditText) findViewById(R.id.txtPhone);
-        txtAge = (EditText) findViewById(R.id.txtAge);
-        txtPassword = (EditText) findViewById(R.id.txtpassword);
+        txt_firstName = (EditText) findViewById(R.id.first_name);
+        txt_lastName = (EditText) findViewById(R.id.last_name);
+        txtJob = (EditText) findViewById(R.id.job);
+        txtCountry = (EditText) findViewById(R.id.country);
+        txtAddress = (EditText) findViewById(R.id.address);
+        txtPhone = (EditText) findViewById(R.id.mobile);
+        txtEmail = (EditText) findViewById(R.id.email);
+        txtPassword = (EditText) findViewById(R.id.password_user);
         Gender = "null";
     }
 
     public void registration(View view) {
-        String Name = txtName.getText().toString();
-        String Email = txtEmail.getText().toString();
-        String NIC = txtNIC.getText().toString();
+        String FirstName = txt_firstName.getText().toString();
+        String LastName = txt_lastName.getText().toString();
+        String Job = txtJob.getText().toString();
+        String Country = txtCountry.getText().toString();
+        String Address = txtAddress.getText().toString();
         String Phone = txtPhone.getText().toString();
-        String Age = txtAge.getText().toString();
+        String Email = txtEmail.getText().toString();
         String Password = txtPassword.getText().toString();
 
         if (!(TextUtils.isEmpty(Name) && TextUtils.isEmpty(NIC) && TextUtils.isEmpty(Age) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Phone) && TextUtils.isEmpty(Password)  && TextUtils.isEmpty(NIC))) {
-            if (validateNIC(NIC)) {
                 HashMap<String, String> param = new HashMap<String, String>();
                 param.put("type", "addMember");
                 param.put("name", Name);
@@ -61,10 +64,6 @@ public class user_registration extends AppCompatActivity {
                 Backgroundworker backgroundworker = new Backgroundworker(user_registration.this);
                 backgroundworker.execute(param);
             } else {
-                Toast.makeText(user_registration.this, "Invalide NIC ", Toast.LENGTH_SHORT).show();
-            }
-
-        } else {
             Toast.makeText(user_registration.this, "Empty field not allowed!", Toast.LENGTH_SHORT).show();
         }
     }
@@ -94,5 +93,10 @@ public class user_registration extends AppCompatActivity {
             }
             alertDialog.show();
         }
+    }
+
+    public void goTo_Login(View view) {
+        Intent intent = new Intent(user_registration.this, user_login.class);
+        startActivity(intent);
     }
 }
