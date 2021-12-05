@@ -50,15 +50,16 @@ public class user_registration extends AppCompatActivity {
         String Email = txtEmail.getText().toString();
         String Password = txtPassword.getText().toString();
 
-        if (!(TextUtils.isEmpty(Name) && TextUtils.isEmpty(NIC) && TextUtils.isEmpty(Age) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Phone) && TextUtils.isEmpty(Password)  && TextUtils.isEmpty(NIC))) {
+        if (!(TextUtils.isEmpty(FirstName) && TextUtils.isEmpty(LastName) && TextUtils.isEmpty(Job) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Phone) && TextUtils.isEmpty(Password)  && TextUtils.isEmpty(Address))) {
                 HashMap<String, String> param = new HashMap<String, String>();
-                param.put("type", "addMember");
-                param.put("name", Name);
+                param.put("type", "addDonoor");
+                param.put("first_name", FirstName);
+                param.put("last_name", LastName);
+                param.put("job", Job);
+                param.put("country", Country);
+                param.put("address", Address);
+                param.put("mobile", Phone);
                 param.put("email", Email);
-                param.put("nic", NIC.toLowerCase().trim());
-                param.put("age", Age);
-                param.put("phone", Phone.trim());
-                param.put("gender", Gender);
                 param.put("Password", Password);
                 //name email nic age phone gender Password
                 Backgroundworker backgroundworker = new Backgroundworker(user_registration.this);

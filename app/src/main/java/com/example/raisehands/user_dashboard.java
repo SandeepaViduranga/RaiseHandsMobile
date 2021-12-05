@@ -33,11 +33,12 @@ public class user_dashboard extends AppCompatActivity {
         dataList = new ArrayList<Project>();
         dataListID = new ArrayList<String>();
         recyclerView = (RecyclerView) findViewById(R.id.AdminOrderRecyclerView);
+        loadProjects();
     }
 
     private void loadProjects(){
         HashMap<String, String> param = new HashMap<String, String>();
-        param.put("type", "load_Records");
+        param.put("type", "load_projects");
         Backgroundworker backgroundworker = new Backgroundworker(user_dashboard.this);
         backgroundworker.execute(param);
     }

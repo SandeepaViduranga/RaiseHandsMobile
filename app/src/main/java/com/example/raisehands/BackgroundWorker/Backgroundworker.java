@@ -48,7 +48,7 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
     protected String doInBackground(HashMap<String, String>... params) {
         HashMap<String, String> param = params[0];
         type = param.get("type");
-        String login_url = "http://192.168.1.5/CBESP-Web/assets/PHP/mobile.php";
+        String login_url = "http://192.168.1.4/RaiseHands/PHP/mobile.php";
         try {
             URL url = new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -110,10 +110,10 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
         if (type.equals("login")) {
             ParentL.displayName(result);
         }
-        if (type.equals("load_Records")) {
+        if (type.equals("load_projects")) {
             ParentD.displayName(result);
         }
-        if (type.equals("addMember")) {
+        if (type.equals("addDonoor")) {
             ParentR.displayName(result);
         }
 
