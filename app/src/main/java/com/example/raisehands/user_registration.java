@@ -10,12 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.raisehands.BackgroundWorker.Backgroundworker;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 
 public class user_registration extends AppCompatActivity {
