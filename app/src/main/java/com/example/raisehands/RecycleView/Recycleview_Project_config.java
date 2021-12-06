@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +36,8 @@ public class Recycleview_Project_config {
 
 
         private TextView txtName,txtOrgName,txtPercentage;
-        private String EID,EName;
+        private CardView card_view;
+        private String PID;
         private String key;
         private Project project;
 
@@ -45,11 +47,22 @@ public class Recycleview_Project_config {
             txtName = (TextView) itemView.findViewById(R.id.txtName);
             txtOrgName = (TextView) itemView.findViewById(R.id.txtOrgName);
             txtPercentage = (TextView) itemView.findViewById(R.id.txtPercentage);
+            card_view = (CardView) itemView.findViewById(R.id.card_view);
 
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, user_project.class);
+                    intent.putExtra("PID",PID);
+                    intent.putExtra("ProjectObj", (Serializable) project);
+                    mContext.startActivity(intent);
+                }
+            });
         }
 
         public void bind(Project project_t,String key){
             project = project_t;
+            PID = project_t.getProject_ID();
             txtName.setText(project_t.getProject_Name());
             txtOrgName.setText(project_t.getProject_Org_Name());
             txtPercentage.setText(project_t.getPercentage());
