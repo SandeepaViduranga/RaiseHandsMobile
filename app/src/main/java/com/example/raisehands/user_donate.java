@@ -50,22 +50,20 @@ public class user_donate extends AppCompatActivity {
         String ExpYear = txt_Expyear.getText().toString();
         String CVV = txt_CVV.getText().toString();
 
-        if (!(TextUtils.isEmpty(FirstName) && TextUtils.isEmpty(LastName) && TextUtils.isEmpty(Job) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Phone) && TextUtils.isEmpty(Password)  && TextUtils.isEmpty(Address))) {
+        if (!(TextUtils.isEmpty(FullName) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Project_ID) && TextUtils.isEmpty(Email) && TextUtils.isEmpty(Donor_ID) && TextUtils.isEmpty(Address))) {
             HashMap<String, String> param = new HashMap<String, String>();
-            param.put("type", "addDonoor");
-            param.put("first_name", FirstName);
-            param.put("last_name", LastName);
-            param.put("job", Job);
-            param.put("country", Country);
-            param.put("address", Address);
-            param.put("mobile", Phone);
-            param.put("email", Email);
-            param.put("Password", Password);
+            param.put("type", "addDonation");
+            param.put("FullName", FullName);
+            param.put("Project_ID", Project_ID);
+            param.put("Donor_ID", Donor_ID);
             //name email nic age phone gender Password
             Backgroundworker backgroundworker = new Backgroundworker(user_donate.this);
             backgroundworker.execute(param);
         } else {
             Toast.makeText(user_donate.this, "Empty field not allowed!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void displayName(String result) {
     }
 }

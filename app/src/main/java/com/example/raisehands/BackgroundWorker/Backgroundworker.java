@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.raisehands.user_dashboard;
+import com.example.raisehands.user_donate;
 import com.example.raisehands.user_login;
 import com.example.raisehands.user_registration;
 
@@ -23,6 +24,7 @@ import java.util.HashMap;
 
 public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, String> {
 
+    private user_donate ParentDo;
     private user_registration ParentR;
     private user_dashboard ParentD;
     private user_login ParentL;
@@ -42,6 +44,11 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
     public Backgroundworker(user_registration parent) {
         ParentR = parent;
         myDialog = new Dialog(ParentR);
+    }
+
+    public Backgroundworker(user_donate parent) {
+        ParentDo = parent;
+        myDialog = new Dialog(ParentDo);
     }
 
     @Override
@@ -115,6 +122,9 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
         }
         if (type.equals("addDonoor")) {
             ParentR.displayName(result);
+        }
+        if (type.equals("addDonation")) {
+            ParentDo.displayName(result);
         }
 
     }
