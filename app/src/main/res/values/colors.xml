@@ -10,4 +10,7 @@
 
     <color name="grey2">#464747</color>
     <color name="light_grey">#f2f2f2</color>
+    <color name="primary_color">#5271FF</color>
+    <color name="paragraph_color">#ced6e0</color>
+    <color name="low_opacity_primary">#805271FF</color>
 </resources>

@@ -61,6 +61,7 @@
                 android:weightSum="2">
 
                 <EditText
+                    android:id="@+id/first_name"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -75,6 +76,7 @@
                     android:textSize="17sp" />
 
                 <EditText
+                    android:id="@+id/last_name"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -91,6 +93,7 @@
             </LinearLayout>
 
             <EditText
+                android:id="@+id/job"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -104,6 +107,7 @@
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -111,12 +115,13 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/sf_pro_bold"
                 android:hint="Country"
-                android:inputType="number"
+                android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHint="#2e3131"
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -124,12 +129,13 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/sf_pro_bold"
                 android:hint="Address"
-                android:inputType="number"
+                android:inputType="textPostalAddress"
                 android:textColor="@color/white"
                 android:textColorHint="#2e3131"
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -137,12 +143,14 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/sf_pro_bold"
                 android:hint="Contact Number"
-                android:inputType="text"
+                android:maxLength="10"
+                android:inputType="number"
                 android:textColor="@color/white"
                 android:textColorHint="#2e3131"
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -156,6 +164,7 @@
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/password_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -176,9 +185,10 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="35dp"
-                android:background="@drawable/button_white"
+                android:background="@drawable/button_with_border"
                 android:fontFamily="@font/sf_pro_bold"
-                android:text="Register"
+                android:text="Register as a Donor"
+                android:letterSpacing="-0.01"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="17sp" />
@@ -195,17 +205,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_regular"
-                    android:text="Don't have an account ?"
+                    android:text="Already have an account ?"
                     android:textColor="#6c7a89"
                     android:textSize="14dp" />
 
                 <TextView
+                    android:onClick="goTo_Login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/sf_pro_bold"
                     android:gravity="left"
-                    android:text="Sign Up"
+                    android:text="Sign In"
                     android:textColor="#6c7a89"
                     android:textSize="15dp" />
 
