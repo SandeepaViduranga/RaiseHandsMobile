@@ -185,7 +185,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="35dp"
-                android:background="@drawable/button_white"
+                android:background="@drawable/button_with_border"
                 android:fontFamily="@font/sf_pro_bold"
                 android:text="Register as a Donor"
                 android:letterSpacing="-0.01"

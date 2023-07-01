@@ -55,7 +55,7 @@ public class Backgroundworker extends AsyncTask<HashMap<String, String>, Void, S
     protected String doInBackground(HashMap<String, String>... params) {
         HashMap<String, String> param = params[0];
         type = param.get("type");
-        String login_url = "http://192.168.1.4/RaiseHands/PHP/mobile.php";
+        String login_url = "http://192.168.43.179/RaiseHands/PHP/mobile.php";
         try {
             URL url = new URL(login_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
